@@ -1,0 +1,111 @@
+:root {
+  --text: #3b2a1e;
+  --text-h: #2a1d14;
+  --text-muted: #8a7361;
+  --bg: #faf3e8;
+  --border: #ddccb3;
+  --code-bg: #efe3d2;
+  --accent: #6f4e37;
+  --accent-bg: rgba(111, 78, 55, 0.1);
+  --accent-border: rgba(111, 78, 55, 0.4);
+  --social-bg: rgba(239, 227, 210, 0.6);
+  --shadow:
+    rgba(59, 42, 30, 0.1) 0 10px 15px -3px, rgba(59, 42, 30, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  --radius: 12px;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e8dcc8;
+    --text-h: #f5ede1;
+    --text-muted: #b3a08c;
+    --bg: #241a13;
+    --border: #4a3628;
+    --code-bg: #34261b;
+    --accent: #d2a679;
+    --accent-bg: rgba(210, 166, 121, 0.15);
+    --accent-border: rgba(210, 166, 121, 0.5);
+    --social-bg: rgba(74, 54, 40, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
