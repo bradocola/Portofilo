@@ -1,13 +1,9 @@
 import './Profile.css'
 import myPic from '../assets/MyPic.jpg'
 
-function Profile({ picSelected, setPicSelected }) {
+function Profile() {
     return (
         <div className="profile">
-            <button className="profile__close" onClick={() => setPicSelected(!picSelected)}>
-                <i className="fa-solid fa-xmark"></i>
-            </button>
-
             <img className="profile__avatar" src={myPic} alt="Omar Nagy" />
             <span className="profile__name">Omar Nagy</span>
             <p className="profile__bio">

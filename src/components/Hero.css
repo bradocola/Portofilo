@@ -23,3 +23,31 @@
   line-height: 1.6;
   color: var(--text-muted);
 }
+
+.hero__cvs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.hero__cv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__cv:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: var(--shadow);
+}

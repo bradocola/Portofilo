@@ -1,32 +1,37 @@
 import './Navbar.css'
+import { NavLink } from 'react-router-dom'
 import myPic from '../assets/MyPic.jpg'
-import { useState } from 'react'
 
-function Navbar({ picSelected, setPicSelected }) {
+function navItemClass({ isActive }) {
+    return `navbar__item${isActive ? ' navbar__item--active' : ''}`
+}
+
+function scrollToContact() {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+}
+
+function Navbar() {
     return (
         <nav className="navbar">
-            <button
-                className={`navbar__brand${picSelected ? ' navbar__brand--active' : ''}`}
-                onClick={() => setPicSelected(!picSelected)}
-            >
+            <NavLink to="/" className={({ isActive }) => `navbar__brand${isActive ? ' navbar__brand--active' : ''}`}>
                 <img className="navbar__avatar" src={myPic} alt="Omar Nagy" />
                 <span className="navbar__name">Omar Nagy</span>
-            </button>
+            </NavLink>
 
-        <div className="navbar__nav">
-            <button onClick={() => setPicSelected(true)} className="navbar__item">
-            <i className="fa-solid fa-user"></i>
-            <span>About</span>
-            </button>
-            <a href="#projects" className="navbar__item">
-            <i className="fa-solid fa-diagram-project"></i>
-            <span>Projects</span>
-            </a>
-            <a href="#contact" className="navbar__item">
-            <i className="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-            </a>
-        </div>
+            <div className="navbar__nav">
+                <NavLink to="/about" className={navItemClass}>
+                    <i className="fa-solid fa-user"></i>
+                    <span>About</span>
+                </NavLink>
+                <NavLink to="/projects" className={navItemClass}>
+                    <i className="fa-solid fa-diagram-project"></i>
+                    <span>Projects</span>
+                </NavLink>
+                <button type="button" onClick={scrollToContact} className="navbar__item">
+                    <i className="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+            </div>
         </nav>
     )
 }

@@ -1,29 +1,21 @@
 import './index.css'
-import Navbar from './components/Navbar.jsx'
-import Profile from './components/Profile.jsx'
-import Hero from './components/Hero.jsx'
-import Projects from './components/Projects.jsx'
-import Footer from './components/Footer.jsx'
-import { useState } from 'react'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout.jsx'
+import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
 
 function App() {
-  const [picSelected, setPicSelected] = useState(false);
   return (
-    <>
-      <Navbar picSelected={picSelected} setPicSelected={setPicSelected} />
-
-      
-      {picSelected ? (
-        <Profile picSelected={picSelected} setPicSelected={setPicSelected} />
-      ) : (
-        <>
-          <Hero />
-          <Projects />
-        </>
-      )}
-
-      <Footer />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   )
 }
 

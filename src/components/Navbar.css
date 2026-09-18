@@ -20,6 +20,8 @@
   background: none;
   border: 1px solid var(--border);
   border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -87,5 +89,9 @@
 }
 
 .navbar__item:hover {
+  color: var(--accent);
+}
+
+.navbar__item--active {
   color: var(--accent);
 }

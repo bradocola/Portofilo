@@ -1,0 +1,106 @@
+.resume {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.resume__block {
+  padding: 20px clamp(16px, 5vw, 24px);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.resume__block:hover {
+  transform: scale(1.03);
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.resume__block-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.resume__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume__skill-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.resume__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.resume__tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.resume__entry + .resume__entry {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.resume__entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resume__entry-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.resume__entry-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.resume__entry-sub {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.resume__entry-points {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.resume__entry-points li + li {
+  margin-top: 4px;
+}
